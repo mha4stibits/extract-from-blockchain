@@ -1,0 +1,35 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "io.stibits"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "BlockChain",
+        "packageName": "io.stibits",
+        "packageFolder": "io/stibits",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "postgresql",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "YWZmMDMyODc4ZmFmNTM2M2Q0YzQ4ZmFjNGM5NzA2YzMzYTJmOTRlYmZhZjg4MDVlZDQwZmMxY2RhYjljZmQxZDc4ZWNiMmQxMDUzOWE0MDlkOWY2YTcyZjI5YmJkODgwOTI1YWVlN2UxNzQwN2I0ZjVhZjY0MTcwNGMxNTlmMGQ=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}

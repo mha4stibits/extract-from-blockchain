@@ -1,0 +1,67 @@
+entity Block{
+	version Integer,
+    previousBlockHash String,
+    merkleRoot String,
+    bits Long,
+    fees Long,
+    nonce Long,
+    size Long,
+    index Long,
+    receivedTime Long,
+    relayedBy String,
+    height Long,
+	hash String,
+	time Instant,
+	mainChain Boolean
+}
+
+entity Transaction {
+	doubleSpend Integer,
+    blockHeight Long,
+    time  Long,
+    lockTime  Long,
+    relayedBy String,
+    hash String,
+    index  Long,
+    version Integer,
+    size Long
+}
+
+entity Input {
+	sequence Long,
+    scriptSignature String
+}
+
+entity Output {
+    n Integer,
+    value Long,
+    address String,
+    txIndex Long,
+    script String,
+    spent Boolean,
+    spentToAddress Boolean
+}
+
+relationship OneToMany {
+    Block{transactions} to Transaction
+    Transaction{outputs} to Output
+    Transaction{inputs} to Input
+}
+
+relationship OneToOne{
+	Input{previousOutput} to Output
+}
+
+
+// Set pagination options
+paginate JobHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
