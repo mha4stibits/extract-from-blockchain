@@ -1,0 +1,50 @@
+{
+    "name": "Output",
+    "fields": [
+        {
+            "fieldName": "n",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "txIndex",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "script",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "spent",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "spentToAddress",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "transaction",
+            "otherEntityName": "transaction",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190417153159",
+    "entityTableName": "output",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

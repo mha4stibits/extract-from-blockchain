@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-transaction-heading">Create or edit a Transaction</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!transaction.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transaction.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_doubleSpend">Double Spend</label>
+                    <input type="number" class="form-control" name="doubleSpend" id="field_doubleSpend"
+                        [(ngModel)]="transaction.doubleSpend" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_blockHeight">Block Height</label>
+                    <input type="number" class="form-control" name="blockHeight" id="field_blockHeight"
+                        [(ngModel)]="transaction.blockHeight" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_time">Time</label>
+                    <input type="number" class="form-control" name="time" id="field_time"
+                        [(ngModel)]="transaction.time" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lockTime">Lock Time</label>
+                    <input type="number" class="form-control" name="lockTime" id="field_lockTime"
+                        [(ngModel)]="transaction.lockTime" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_relayedBy">Relayed By</label>
+                    <input type="text" class="form-control" name="relayedBy" id="field_relayedBy"
+                        [(ngModel)]="transaction.relayedBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hash">Hash</label>
+                    <input type="text" class="form-control" name="hash" id="field_hash"
+                        [(ngModel)]="transaction.hash" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_index">Index</label>
+                    <input type="number" class="form-control" name="index" id="field_index"
+                        [(ngModel)]="transaction.index" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                        [(ngModel)]="transaction.version" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_size">Size</label>
+                    <input type="number" class="form-control" name="size" id="field_size"
+                        [(ngModel)]="transaction.size" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_block">Block</label>
+                    <select class="form-control" id="field_block" name="block" [(ngModel)]="transaction.blockId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="blockOption.id" *ngFor="let blockOption of blocks; trackBy: trackBlockById">{{blockOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

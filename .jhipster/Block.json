@@ -1,0 +1,78 @@
+{
+    "name": "Block",
+    "fields": [
+        {
+            "fieldName": "version",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "previousBlockHash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "merkleRoot",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bits",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fees",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nonce",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "index",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "receivedTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "relayedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "height",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "hash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "mainChain",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "block",
+            "relationshipName": "transactions"
+        }
+    ],
+    "changelogDate": "20190417153156",
+    "entityTableName": "block",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

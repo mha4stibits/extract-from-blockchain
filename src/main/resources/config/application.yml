@@ -85,6 +85,7 @@ spring:
         mode: HTML
 
 server:
+    port: 8085
     servlet:
         session:
             cookie:

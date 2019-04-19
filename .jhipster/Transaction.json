@@ -1,0 +1,70 @@
+{
+    "name": "Transaction",
+    "fields": [
+        {
+            "fieldName": "doubleSpend",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "blockHeight",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lockTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "relayedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "index",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "block",
+            "otherEntityName": "block",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "output",
+            "otherEntityRelationshipName": "transaction",
+            "relationshipName": "outputs"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "input",
+            "otherEntityRelationshipName": "transaction",
+            "relationshipName": "inputs"
+        }
+    ],
+    "changelogDate": "20190417153157",
+    "entityTableName": "transaction",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

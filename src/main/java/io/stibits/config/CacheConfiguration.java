@@ -38,6 +38,13 @@ public class CacheConfiguration {
             cm.createCache(io.stibits.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.stibits.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.stibits.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Block.class.getName(), jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Block.class.getName() + ".transactions", jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Transaction.class.getName(), jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Transaction.class.getName() + ".outputs", jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Transaction.class.getName() + ".inputs", jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Input.class.getName(), jcacheConfiguration);
+            cm.createCache(io.stibits.domain.Output.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

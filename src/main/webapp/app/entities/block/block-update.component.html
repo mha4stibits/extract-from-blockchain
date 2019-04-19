@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-block-heading">Create or edit a Block</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!block.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="block.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                        [(ngModel)]="block.version" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_previousBlockHash">Previous Block Hash</label>
+                    <input type="text" class="form-control" name="previousBlockHash" id="field_previousBlockHash"
+                        [(ngModel)]="block.previousBlockHash" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_merkleRoot">Merkle Root</label>
+                    <input type="text" class="form-control" name="merkleRoot" id="field_merkleRoot"
+                        [(ngModel)]="block.merkleRoot" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bits">Bits</label>
+                    <input type="number" class="form-control" name="bits" id="field_bits"
+                        [(ngModel)]="block.bits" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fees">Fees</label>
+                    <input type="number" class="form-control" name="fees" id="field_fees"
+                        [(ngModel)]="block.fees" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nonce">Nonce</label>
+                    <input type="number" class="form-control" name="nonce" id="field_nonce"
+                        [(ngModel)]="block.nonce" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_size">Size</label>
+                    <input type="number" class="form-control" name="size" id="field_size"
+                        [(ngModel)]="block.size" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_index">Index</label>
+                    <input type="number" class="form-control" name="index" id="field_index"
+                        [(ngModel)]="block.index" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_receivedTime">Received Time</label>
+                    <input type="number" class="form-control" name="receivedTime" id="field_receivedTime"
+                        [(ngModel)]="block.receivedTime" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_relayedBy">Relayed By</label>
+                    <input type="text" class="form-control" name="relayedBy" id="field_relayedBy"
+                        [(ngModel)]="block.relayedBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_height">Height</label>
+                    <input type="number" class="form-control" name="height" id="field_height"
+                        [(ngModel)]="block.height" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hash">Hash</label>
+                    <input type="text" class="form-control" name="hash" id="field_hash"
+                        [(ngModel)]="block.hash" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_time">Time</label>
+                    <div class="d-flex">
+                        <input id="field_time" type="datetime-local" class="form-control" name="time" [(ngModel)]="time" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mainChain">Main Chain</label>
+                    <input type="checkbox" class="form-control" name="mainChain" id="field_mainChain"
+                        [(ngModel)]="block.mainChain" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

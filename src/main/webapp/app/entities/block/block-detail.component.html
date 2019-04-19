@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="block">
+            <h2><span>Block</span> {{block.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Version</span></dt>
+                <dd>
+                    <span>{{block.version}}</span>
+                </dd>
+                <dt><span>Previous Block Hash</span></dt>
+                <dd>
+                    <span>{{block.previousBlockHash}}</span>
+                </dd>
+                <dt><span>Merkle Root</span></dt>
+                <dd>
+                    <span>{{block.merkleRoot}}</span>
+                </dd>
+                <dt><span>Bits</span></dt>
+                <dd>
+                    <span>{{block.bits}}</span>
+                </dd>
+                <dt><span>Fees</span></dt>
+                <dd>
+                    <span>{{block.fees}}</span>
+                </dd>
+                <dt><span>Nonce</span></dt>
+                <dd>
+                    <span>{{block.nonce}}</span>
+                </dd>
+                <dt><span>Size</span></dt>
+                <dd>
+                    <span>{{block.size}}</span>
+                </dd>
+                <dt><span>Index</span></dt>
+                <dd>
+                    <span>{{block.index}}</span>
+                </dd>
+                <dt><span>Received Time</span></dt>
+                <dd>
+                    <span>{{block.receivedTime}}</span>
+                </dd>
+                <dt><span>Relayed By</span></dt>
+                <dd>
+                    <span>{{block.relayedBy}}</span>
+                </dd>
+                <dt><span>Height</span></dt>
+                <dd>
+                    <span>{{block.height}}</span>
+                </dd>
+                <dt><span>Hash</span></dt>
+                <dd>
+                    <span>{{block.hash}}</span>
+                </dd>
+                <dt><span>Time</span></dt>
+                <dd>
+                    <span>{{block.time}}</span>
+                </dd>
+                <dt><span>Main Chain</span></dt>
+                <dd>
+                    <span>{{block.mainChain}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/block', block.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,14 @@
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
+        <repository>
+            <id>api-v1-client-java-mvn-repo</id>
+            <url>https://raw.githubusercontent.com/blockchain/api-v1-client-java/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -117,6 +125,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>info.blockchain</groupId>
+            <artifactId>api</artifactId>
+            <version>LATEST</version>
+        </dependency>
         <dependency>
             <groupId>io.github.jhipster</groupId>
             <artifactId>jhipster-framework</artifactId>

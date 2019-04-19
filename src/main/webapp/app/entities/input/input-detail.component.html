@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="input">
+            <h2><span>Input</span> {{input.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Sequence</span></dt>
+                <dd>
+                    <span>{{input.sequence}}</span>
+                </dd>
+                <dt><span>Script Signature</span></dt>
+                <dd>
+                    <span>{{input.scriptSignature}}</span>
+                </dd>
+                <dt><span>Transaction</span></dt>
+                <dd>
+                    <div *ngIf="input.transactionId">
+                        <a [routerLink]="['/transaction', input.transactionId, 'view']">{{input.transactionId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Previous Output</span></dt>
+                <dd>
+                    <div *ngIf="input.previousOutputId">
+                        <a [routerLink]="['/output', input.previousOutputId, 'view']">{{input.previousOutputId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/input', input.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

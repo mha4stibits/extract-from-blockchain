@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span>Outputs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-output" [routerLink]="['/output/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Output
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="outputs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>N</span></th>
+            <th><span>Value</span></th>
+            <th><span>Address</span></th>
+            <th><span>Tx Index</span></th>
+            <th><span>Script</span></th>
+            <th><span>Spent</span></th>
+            <th><span>Spent To Address</span></th>
+            <th><span>Transaction</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let output of outputs ;trackBy: trackId">
+                <td><a [routerLink]="['/output', output.id, 'view' ]">{{output.id}}</a></td>
+                <td>{{output.n}}</td>
+                <td>{{output.value}}</td>
+                <td>{{output.address}}</td>
+                <td>{{output.txIndex}}</td>
+                <td>{{output.script}}</td>
+                <td>{{output.spent}}</td>
+                <td>{{output.spentToAddress}}</td>
+                <td>
+                    <div *ngIf="output.transactionId">
+                        <a [routerLink]="['../transaction', output.transactionId , 'view' ]" >{{output.transactionId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/output', output.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/output', output.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'output', { outlets: { popup: output.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

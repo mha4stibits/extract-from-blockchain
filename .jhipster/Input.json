@@ -1,0 +1,38 @@
+{
+    "name": "Input",
+    "fields": [
+        {
+            "fieldName": "sequence",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "scriptSignature",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "transaction",
+            "otherEntityName": "transaction",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "output",
+            "otherEntityRelationshipName": "input",
+            "relationshipName": "previousOutput",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190417153158",
+    "entityTableName": "input",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

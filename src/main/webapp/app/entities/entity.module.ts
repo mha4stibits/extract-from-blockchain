@@ -4,6 +4,22 @@ import { RouterModule } from '@angular/router';
 @NgModule({
     imports: [
         RouterModule.forChild([
+            {
+                path: 'block',
+                loadChildren: './block/block.module#BlockChainBlockModule'
+            },
+            {
+                path: 'transaction',
+                loadChildren: './transaction/transaction.module#BlockChainTransactionModule'
+            },
+            {
+                path: 'input',
+                loadChildren: './input/input.module#BlockChainInputModule'
+            },
+            {
+                path: 'output',
+                loadChildren: './output/output.module#BlockChainOutputModule'
+            }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])
     ],
