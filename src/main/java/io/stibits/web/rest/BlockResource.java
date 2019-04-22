@@ -115,7 +115,7 @@ public class BlockResource {
 
         //List<UnspentOutput> list = blockExplorer.getUnspentOutputs("miUmB85Ewt6cEgcZwm9zu3tECmj8YjzZfh");
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-        Date startDate = sdf.parse("01-01-2009 00:00:00");
+        Date startDate = sdf.parse("17-12-2009 00:00:00");
         Date endDate = sdf.parse("31-12-2009 00:00:00");
 
         Calendar calendar = Calendar.getInstance();
